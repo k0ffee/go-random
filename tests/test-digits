@@ -1,0 +1,13 @@
+#!/usr/bin/env zsh
+set -eu
+
+# test-digits:
+
+for target in $@; do
+    if ./$target | grep -E '^([1]?[0-9] ){9}[1]?[0-9]$' >/dev/null; then
+        print "ok: $target has 10 digits"
+    else
+        print "failed: $target has not 10 digits"
+        exit 1
+    fi
+done

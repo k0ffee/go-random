@@ -1,0 +1,15 @@
+#!/usr/bin/env zsh
+set -eu
+
+# test-randomness:
+# Can randomly fail if randomness actually looks nonrandom.
+
+for target in $@; do
+    { repeat 10 ./$target } | sort | uniq | wc -l | \
+        if grep '^ *10$' >/dev/null; then
+            print "ok: $target is random enough"
+        else
+            print "failed: $target is not random enough"
+            exit 1
+        fi
+done

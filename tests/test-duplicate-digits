@@ -1,0 +1,13 @@
+#!/usr/bin/env zsh
+set -eu
+
+# test-duplicate-digits:
+
+for target in $@; do
+    if ./$target | tr ' ' '\n' | sort | uniq -d | grep . >/dev/null; then
+        print "failed: $target has duplicates"
+        exit 1
+    else
+        print "ok: $target has no duplicates"
+    fi
+done
