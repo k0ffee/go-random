@@ -10,7 +10,7 @@ import (
 )
 
 func init() {
-	rand.Seed(time.Now().UTC().UnixNano())
+	rand.Seed(time.Now().UnixNano())
 }
 
 func main() {
