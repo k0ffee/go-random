@@ -3,20 +3,20 @@ suffix  = .go
 tests   = tests/test-*
 
 .PHONY: all
-all: ${targets}
+all: $(targets)
 
-${targets}:
-	go build ${@}${suffix}
+$(targets):
+	go build $(@)$(suffix)
 
 .PHONY: chmod test tests
 chmod:
-	chmod +x ${tests}
+	chmod +x $(tests)
 
 test: ${tests}
 
-${tests}: ${targets} chmod
-	$@ ${targets}
+$(tests): $(targets) chmod
+	$@ $(targets)
 
 .PHONY: clean
 clean:
-	rm -f ${targets}
+	rm -f $(targets)
