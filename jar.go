@@ -42,14 +42,14 @@ func main() {
 			// shortcut for last key
 			var j int64
 			for j = 1; j <= int64(runs); j++ {
-				found := 0
+				found := false
 				for _, v := range kv {
 					if j == v {
-						found = 1
+						found = true
 						break
 					}
 				}
-				if found == 0 {
+				if !found {
 					kv[i] = j
 					break
 				}
@@ -57,14 +57,14 @@ func main() {
 		default:
 			for {
 				num := getRandomInt(max)
-				found := 0
+				found := false
 				for _, v := range kv {
 					if num == v {
-						found = 1
+						found = true
 						break
 					}
 				}
-				if found == 0 {
+				if !found {
 					kv[i] = num
 					break
 				}
