@@ -6,7 +6,8 @@ Build it
 
 On Linux get a Go compiler:
 
-Assuming a Debian-style distro:
+Assuming a Debian-style distribution (we'll use `zsh`
+later in an example):
 
 ```
 sudo apt-get update
