@@ -12,7 +12,7 @@ $(targets):
 chmod:
 	chmod +x $(tests)
 
-test: ${tests}
+test: $(tests)
 
 $(tests): $(targets) chmod
 	$@ $(targets)
